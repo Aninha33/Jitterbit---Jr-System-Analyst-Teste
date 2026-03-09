@@ -28,12 +28,31 @@ A aplicação permite criar, consultar, atualizar e remover pedidos, além de re
 
 ---
 
-# 📌 Endpoints da API
+## Estrutura das tabelas
 
-| Método | Endpoint | Descrição |
-|------|------|------|
-| POST | `/order` | Criar um novo pedido |
-| GET | `/order/:orderId` | Buscar um pedido pelo ID |
+**orders**
+| orderId | value | creationDate |
+
+**items**
+| id | orderId | productId | quantity | price |
+
+## Como rodar
+
+```bash
+docker-compose up --build
+```
+
+## Endpoints
+
+| Método | URL | Descrição |
+|--------|-----|-----------|
+| POST | /order | Criar pedido |
+| GET | /order/list | Listar todos |
+| GET | /order/:numeroPedido | Buscar por número |
+| PUT | /order/:numeroPedido | Atualizar |
+| DELETE | /order/:numeroPedido | Deletar |
+
+---car um pedido pelo ID |
 | GET | `/order/list` | Listar todos os pedidos |
 | PUT | `/order/:orderId` | Atualizar um pedido |
 | DELETE | `/order/:orderId` | Remover um pedido |
