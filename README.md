@@ -19,12 +19,11 @@ A aplicação permite criar, consultar, atualizar e remover pedidos, além de re
 
 ---
 
-# 🚀 Tecnologias Utilizadas
+# 🚀 Stack
 
-- Node.js  
-- Express.js  
-- JavaScript (ES6+)  
-- Banco de dados (MongoDB / PostgreSQL / SQL)
+- Node.js + Express
+- PostgreSQL 16
+- Docker + Docker Compose
 
 ---
 
