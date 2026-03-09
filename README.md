@@ -52,7 +52,59 @@ docker-compose up --build
 | PUT | /order/:numeroPedido | Atualizar |
 | DELETE | /order/:numeroPedido | Deletar |
 
----car um pedido pelo ID |
-| GET | `/order/list` | Listar todos os pedidos |
+
+## Exemplos
+
+### Criar pedido
+```bash
+curl -X POST http://localhost:3000/order \
+  -H "Content-Type: application/json" \
+  -d '{
+    "numeroPedido": "v10089015vdb-01",
+    "valorTotal": 10000,
+    "dataCriacao": "2023-07-19T12:24:11.5299601+00:00",
+    "items": [
+      {
+        "idItem": "2434",
+        "quantidadeItem": 1,
+        "valorItem": 1000
+      }
+    ]
+  }'
+```
+
+### Buscar pedido
+```bash
+curl http://localhost:3000/order/v10089015vdb-01
+```
+
+### Listar todos
+```bash
+curl http://localhost:3000/order/list
+```
+
+### Atualizar pedido
+```bash
+curl -X PUT http://localhost:3000/order/v10089015vdb-01 \
+  -H "Content-Type: application/json" \
+  -d '{
+    "valorTotal": 15000,
+    "dataCriacao": "2023-07-20T10:00:00.000Z",
+    "items": [
+      {
+        "idItem": "2434",
+        "quantidadeItem": 2,
+        "valorItem": 7500
+      }
+    ]
+  }'
+```
+
+### Deletar pedido
+```bash
+curl -X DELETE http://localhost:3000/order/v10089015vdb-01
+```
+
+
 | PUT | `/order/:orderId` | Atualizar um pedido |
 | DELETE | `/order/:orderId` | Remover um pedido |
